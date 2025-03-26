@@ -4,12 +4,12 @@ from flask import redirect
 from app.forms import LoginForm
 from app.models import User
 from app import db
-# from <X> import <Y>
+
 
 @myapp_obj.route("/")
 def main():
-    name = "carlos"
-    return render_template("hello.html", name=name)
+    recipes = Recipe.query.all()
+    return render_template("home.html", title = "Home Page", recipes = recipes)
 
 @myapp_obj.route("/accounts")
 def users():
@@ -24,5 +24,4 @@ def login():
     else:
         print("MOOOO MOOO")
     return render_template("login.html", form=form)
-    # What is render template returning?
-    #return str(type(render_template("login.html", form=form)))
+
