@@ -2,7 +2,7 @@ from app import myapp_obj
 from flask import render_template
 from flask import redirect
 from app.forms import LoginForm
-from app.models import User
+from app.models import User, Recipe
 from app import db
 
 
